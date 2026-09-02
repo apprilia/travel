@@ -148,11 +148,19 @@
       background: #ffffff;
       box-shadow: 0 2px 8px rgba(0,0,0,0.1);
       z-index: 1000;
-      padding: 10px 8px;
+      padding: 10px 8px 8px;
       overflow-x: auto;
+      overflow-y: hidden;
       white-space: nowrap;
       -webkit-overflow-scrolling: touch;
+      scrollbar-width: thin;
+      scrollbar-color: #0284c7 #e2e8f0;
     }
+
+    .nav-bar::-webkit-scrollbar { height: 8px; }
+    .nav-bar::-webkit-scrollbar-track { background: #e2e8f0; border-radius: 999px; }
+    .nav-bar::-webkit-scrollbar-thumb { background: #0284c7; border-radius: 999px; }
+    .nav-bar::-webkit-scrollbar-thumb:hover { background: #1e3a8a; }
     .nav-bar a {
       display: inline-block;
       padding: 8px 14px;
