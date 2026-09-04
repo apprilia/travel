@@ -42,19 +42,39 @@
     .header h1 { font-size: 1.8rem; margin-bottom: 6px; }
     .header p { font-size: 1rem; opacity: 0.9; }
 
-    .nav-bar {
-      position: sticky;
-      top: 0;
-      background: #ffffff;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-      z-index: 1000;
-      padding: 10px 8px;
-      overflow-x: auto;
-      white-space: nowrap;
-      -webkit-overflow-scrolling: touch;
-      scrollbar-width: none;
-    }
-    .nav-bar::-webkit-scrollbar { display: none; }
+.nav-bar {
+  position: sticky;
+  top: 0;
+  background: #ffffff;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  z-index: 1000;
+  padding: 10px 8px 14px 8px; /* 稍微增加底部間距以放置滾動條 */
+  overflow-x: auto;
+  white-space: nowrap;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin; /* 針對 Firefox 顯示細滾動條 */
+  scrollbar-color: var(--secondary) #f1f5f9; /* 滾動條顏色與軌道顏色 */
+}
+
+/* 針對 Chrome / Safari / Edge 的拉條樣式 */
+.nav-bar::-webkit-scrollbar {
+  height: 6px; /* 控制水平拉條的高度 */
+  display: block; /* 確保顯示拉條 */
+}
+
+.nav-bar::-webkit-scrollbar-track {
+  background: #f1f5f9; /* 拉條軌道底色 */
+  border-radius: 10px;
+}
+
+.nav-bar::-webkit-scrollbar-thumb {
+  background: var(--secondary); /* 拉條滑塊顏色 (使用已定義的藍色) */
+  border-radius: 10px;
+}
+
+.nav-bar::-webkit-scrollbar-thumb:hover {
+  background: var(--primary); /* 滑鼠懸停時變成深藍色 */
+}
     .nav-bar a {
       display: inline-block;
       padding: 8px 14px;
