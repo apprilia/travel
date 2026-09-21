@@ -42,39 +42,39 @@
     .header h1 { font-size: 1.8rem; margin-bottom: 6px; }
     .header p { font-size: 1rem; opacity: 0.9; }
 
-.nav-bar {
-  position: sticky;
-  top: 0;
-  background: #ffffff;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-  z-index: 1000;
-  padding: 10px 8px 14px 8px; /* 稍微增加底部間距以放置滾動條 */
-  overflow-x: auto;
-  white-space: nowrap;
-  -webkit-overflow-scrolling: touch;
-  scrollbar-width: thin; /* 針對 Firefox 顯示細滾動條 */
-  scrollbar-color: var(--secondary) #f1f5f9; /* 滾動條顏色與軌道顏色 */
-}
+    .nav-bar {
+      position: sticky;
+      top: 0;
+      background: #ffffff;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      z-index: 1000;
+      padding: 10px 8px 14px 8px;
+      overflow-x: auto;
+      white-space: nowrap;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: thin;
+      scrollbar-color: var(--secondary) #f1f5f9;
+    }
 
-/* 針對 Chrome / Safari / Edge 的拉條樣式 */
-.nav-bar::-webkit-scrollbar {
-  height: 6px; /* 控制水平拉條的高度 */
-  display: block; /* 確保顯示拉條 */
-}
+    .nav-bar::-webkit-scrollbar {
+      height: 6px;
+      display: block;
+    }
 
-.nav-bar::-webkit-scrollbar-track {
-  background: #f1f5f9; /* 拉條軌道底色 */
-  border-radius: 10px;
-}
+    .nav-bar::-webkit-scrollbar-track {
+      background: #f1f5f9;
+      border-radius: 10px;
+    }
 
-.nav-bar::-webkit-scrollbar-thumb {
-  background: var(--secondary); /* 拉條滑塊顏色 (使用已定義的藍色) */
-  border-radius: 10px;
-}
+    .nav-bar::-webkit-scrollbar-thumb {
+      background: var(--secondary);
+      border-radius: 10px;
+    }
 
-.nav-bar::-webkit-scrollbar-thumb:hover {
-  background: var(--primary); /* 滑鼠懸停時變成深藍色 */
-}
+    .nav-bar::-webkit-scrollbar-thumb:hover {
+      background: var(--primary);
+    }
+
     .nav-bar a {
       display: inline-block;
       padding: 8px 14px;
@@ -158,7 +158,6 @@
       line-height: 1.6;
       color: var(--text);
     }
-    /* 已完成樣式：字體加上刪除線、顏色變淺 */
     .checklist-item.completed {
       background: #f1f5f9;
       border-color: #cbd5e1;
@@ -323,6 +322,7 @@
     <a href="#d8" onclick="switchTab('d8'); return false;" class="nav-btn" id="btn-d8">D8 09/29(二)</a>
     <a href="#d9" onclick="switchTab('d9'); return false;" class="nav-btn" id="btn-d9">D9 09/30(三)</a>
     <a href="#d10" onclick="switchTab('d10'); return false;" class="nav-btn" id="btn-d10">D10 10/01(四)</a>
+    <a href="#supermarket" onclick="switchTab('supermarket'); return false;" class="nav-btn" id="btn-supermarket">日本超市找找</a>
   </nav>
 
   <!-- Memo 分頁 -->
@@ -333,6 +333,7 @@
       <li>🍱 <b>D2：</b><a onclick="switchTab('d2')" class="link-btn">各家鞋子推薦型號</a></li>
       <li>♨️ <b>D5：</b><a onclick="switchTab('d5')" class="link-btn">湯布院老街介紹</a></li>
       <li>🍲 <b>D7：</b><a onclick="switchTab('d7')" class="link-btn">天神補充介紹</a></li>
+      <li>🛒 <b>超市：</b><a onclick="switchTab('supermarket')" class="link-btn">日本超市必買清單</a></li>
     </ul>
 
     <h3>📌 旅途備忘事項</h3>
@@ -412,7 +413,6 @@
           <span class="checklist-text">要買頭痛藥及感冒藥(一年份)</span>
         </label>
       </li>    
-      </li>
       <li class="checklist-item">
         <label>
           <input type="checkbox" data-id="memo_12" onchange="handleCheckChange(this, 'memo-checklist')">
@@ -567,7 +567,7 @@
     </ul>
   </div>
 
-  <!-- Day 1 至 Day 10 內容保持不變 -->
+  <!-- Day 1 -->
   <div id="d1" class="tab-content day-card">
     <div class="day-title">第一天 09/22 (二) 出發與前往小倉</div>
     <div class="day-content">
@@ -742,9 +742,45 @@
 
   <!-- Day 3 -->
   <div id="d3" class="tab-content day-card">
-    <div class="day-title">第三天 09/24 (四) 米其林鰻魚飯、運動用品專賣店及北九州OUTLET蝦拼去</div>
+    <div class="day-title">第三天 09/24 (四) 小倉與門司港一日遊</div>
     <div class="day-content">
-    <div class="sec-header">🍱 鰻魚飯登記與周邊商店街</div>
+    <div class="sec-header">🚢 門司港與唐戶市場</div>
+      <ul>
+        <li>搭火車到門司港車站（14 分鐘） <a class="link-btn" href="https://maps.app.goo.gl/WFLrjYEPT4H382SL7" target="_blank">地圖</a></li>
+        <li>門司港棧橋搭關門連絡船至下關唐戶碼頭（5 分鐘） <a class="link-btn" href="https://maps.app.goo.gl/k1fTKhzCG1Nh3azt6" target="_blank">地圖</a></li>
+        <li>唐戶市場吃河豚握壽司與生魚片（大多僅收現金，排隊人多，可至戶外海邊或2樓用餐區食用）</li>
+        <li>龜山八幡宮(日本最大花崗石鳥居及「世界第一」的河豚銅像) <a class="link-btn" href="https://maps.app.goo.gl/DPRpWHM7uRfJEefW8" target="_blank">地圖</a></li>
+        <li>赤間神宮(外觀仿造海底龍宮、色彩鮮豔華麗的特色神社) <a class="link-btn" href="https://maps.app.goo.gl/kPpnrxzoL48LHynD6" target="_blank">地圖</a></li>
+        <li>回門司港逛紀念品店：海峽廣場 <a class="link-btn" href="https://maps.app.goo.gl/1vPXAeAJjNLGAxp88" target="_blank">地圖</a> | 香蕉人 <a class="link-btn" href="https://maps.app.goo.gl/rZMs5XreKBPQ5b3C8" target="_blank">地圖</a></li>
+      </ul>
+
+      <div class="sec-header">🏯 下午小倉城與皿倉山夜景</div>
+      <ul>
+        <li><b>提醒：</b>要帶一件薄外套。</li>        
+        <li>小倉城 <a class="link-btn" href="https://maps.app.goo.gl/qyqG1hqA8D9NiHpc7" target="_blank">地圖</a>
+          <div class="desc-box">
+            <b>【樓層導覽】</b><br>
+            • <b>1樓：</b>城下町體驗（免費體驗武士/忍者服、騎馬射箭遊戲）<br>
+            • <b>2-3樓：</b>歷代藩主與宮本武藏、佐佐木小次郎決鬥文物<br>
+            • <b>4樓：</b>多功能展覽藝廊與XR體驗<br>
+            • <b>5樓：</b>展望台與咖啡廳（週六夜晚為天守閣酒吧）
+          </div>
+        </li>
+        <li>坐火車到八幡站 <a class="link-btn" href="https://maps.app.goo.gl/49FbbTsFMHCm6rqd6" target="_blank">地圖</a></li>
+        <li>搭接駁車（夏季平日首班 <span class="time-badge">17:05</span> / 末班 <span class="time-badge">22:15</span>）<br><a class="link-btn" href="https://www.sarakurayama-cablecar.co.jp/shuttlebus/" target="_blank">接駁車時刻表</a></li>
+        <li>搭纜車上皿倉山看夜景（約10分鐘，20分鐘一班） <span class="hours">10:00–22:00</span>（上行末班 <span class="time-badge">21:20</span>，下行末班 <span class="time-badge">22:00</span>） <a class="link-btn" href="https://maps.app.goo.gl/JRQ45kUvtPMdzbsF9" target="_blank">地圖</a></li>
+        <li>可在觀景台餐廳吃小東西，回小倉後再吃晚餐。</li>
+        <div class="sec-header">🍽️ 晚餐</div>        
+        <li>博多牛腸鍋 前田屋 小倉，有活章魚刺身跟馬肉刺身 <br><span class="hours">17:00–00:00</span> <a class="link-btn" href="https://maps.app.goo.gl/vRxpaowG5LYWSk1F8" target="_blank">地圖</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Day 4 -->
+  <div id="d4" class="tab-content day-card">
+    <div class="day-title">第四天 09/25 (五) 米其林鰻魚飯、運動用品專賣店及北九州OUTLET蝦拼去</div>
+    <div class="day-content">
+      <div class="sec-header">🍱 鰻魚飯登記與周邊商店街</div>
       <ul>
         <li><span class="time-badge">10:00左右</span> 前往鰻魚店登記，登記完後逛唐吉訶德或中央商店街，<span class="time-badge">11:00前</span> 回到店前。</li>
         <li>鰻魚 田舍庵 <br><span class="hours">11:00–20:00</span> <a class="link-btn" href="https://maps.app.goo.gl/2PCCdcBAhrzyyAAA6" target="_blank">地圖</a>
@@ -777,43 +813,7 @@
             • 3F: 美食街、DAISO、3COINS+plus</div>
         <div class="sec-header">🍽️ 晚餐</div>    
         <li>極味屋 <br><span class="hours">10:00–21:00</span> <a class="link-btn" href="https://maps.app.goo.gl/y54FcL2amuUEVdJd9" target="_blank">地圖</a></li>
-      </ul>
-    </div>
-  </div>
-
-  <!-- Day 4 -->
-  <div id="d4" class="tab-content day-card">
-    <div class="day-title">第四天 09/25 (五) 小倉與門司港一日遊</div>
-    <div class="day-content">
-      <div class="sec-header">🚢 門司港與唐戶市場</div>
-      <ul>
-        <li>搭火車到門司港車站（14 分鐘） <a class="link-btn" href="https://maps.app.goo.gl/WFLrjYEPT4H382SL7" target="_blank">地圖</a></li>
-        <li>門司港棧橋搭關門連絡船至下關唐戶碼頭（5 分鐘） <a class="link-btn" href="https://maps.app.goo.gl/k1fTKhzCG1Nh3azt6" target="_blank">地圖</a></li>
-        <li>唐戶市場吃河豚握壽司與生魚片（大多僅收現金，排隊人多，可至戶外海邊或2樓用餐區食用）</li>
-        <li>龜山八幡宮(日本最大花崗石鳥居及「世界第一」的河豚銅像) <a class="link-btn" href="https://maps.app.goo.gl/DPRpWHM7uRfJEefW8" target="_blank">地圖</a></li>
-        <li>赤間神宮(外觀仿造海底龍宮、色彩鮮豔華麗的特色神社) <a class="link-btn" href="https://maps.app.goo.gl/kPpnrxzoL48LHynD6" target="_blank">地圖</a></li>
-        <li>回門司港逛紀念品店：海峽廣場 <a class="link-btn" href="https://maps.app.goo.gl/1vPXAeAJjNLGAxp88" target="_blank">地圖</a> | 香蕉人 <a class="link-btn" href="https://maps.app.goo.gl/rZMs5XreKBPQ5b3C8" target="_blank">地圖</a></li>
-      </ul>
-
-      <div class="sec-header">🏯 下午小倉城與皿倉山夜景</div>
-      <ul>
-        <li><b>提醒：</b>要帶一件薄外套。</li>        
-        <li>小倉城 <a class="link-btn" href="https://maps.app.goo.gl/qyqG1hqA8D9NiHpc7" target="_blank">地圖</a>
-          <div class="desc-box">
-            <b>【樓層導覽】</b><br>
-            • <b>1樓：</b>城下町體驗（免費體驗武士/忍者服、騎馬射箭遊戲）<br>
-            • <b>2-3樓：</b>歷代藩主與宮本武藏、佐佐木小次郎決鬥文物<br>
-            • <b>4樓：</b>多功能展覽藝廊與XR體驗<br>
-            • <b>5樓：</b>展望台與咖啡廳（週六夜晚為天守閣酒吧）
-          </div>
-        </li>
-        <li>坐火車到八幡站 <a class="link-btn" href="https://maps.app.goo.gl/49FbbTsFMHCm6rqd6" target="_blank">地圖</a></li>
-        <li>搭接駁車（夏季平日首班 <span class="time-badge">17:05</span> / 末班 <span class="time-badge">22:15</span>）<br><a class="link-btn" href="https://www.sarakurayama-cablecar.co.jp/shuttlebus/" target="_blank">接駁車時刻表</a></li>
-        <li>搭纜車上皿倉山看夜景（約10分鐘，20分鐘一班） <span class="hours">10:00–22:00</span>（上行末班 <span class="time-badge">21:20</span>，下行末班 <span class="time-badge">22:00</span>） <a class="link-btn" href="https://maps.app.goo.gl/JRQ45kUvtPMdzbsF9" target="_blank">地圖</a></li>
-        <li>可在觀景台餐廳吃小東西，回小倉後再吃晚餐。</li>
         <li><b>⚠️ 回飯店前：</b>準備暈車藥，並打包行李，可討論是否要將大件行李寄放在博多車站，帶輕便行李去由布院就好。</li>
-        <div class="sec-header">🍽️ 晚餐</div>        
-        <li>博多牛腸鍋 前田屋 小倉，有活章魚刺身跟馬肉刺身 <br><span class="hours">17:00–00:00</span> <a class="link-btn" href="https://maps.app.goo.gl/vRxpaowG5LYWSk1F8" target="_blank">地圖</a></li>
       </ul>
     </div>
   </div>
@@ -1099,6 +1099,119 @@
         <li>FUQUOKKA 短尾矮袋鼠年輪蛋糕 <br><span class="hours">09:00–21:00</span> <a class="link-btn" href="https://maps.app.goo.gl/BbJJsn8ih2ZtaWGq5" target="_blank">地圖</a></li>
         <li>KOKUNEKO 黑貓主題濃郁黑糖甜點/餅乾/費南雪 <br><span class="hours">08:00–21:00</span> <a class="link-btn" href="https://maps.app.goo.gl/NbX4XE8jCAi2nGZs5" target="_blank">地圖</a></li>
       </ul>
+    </div>
+  </div>
+
+  <!-- 日本超市找找 -->
+  <div id="supermarket" class="tab-content day-card">
+    <div class="day-title">🛒 日本超市找找</div>
+    <div class="day-content">
+
+      <div class="sec-header">1. 零食 / 糖果餅乾區（Snacks & Sweets Area）</div>
+      <ul>
+        <li>meiji 明治 香菇山與竹筍里 抹茶綜合包（きのこの山 宇治抹茶＆たけのこの里 西尾抹茶 8袋入）</li>
+        <img src="https://drive.google.com/thumbnail?id=1uMkkQ5k459E0Yu84l4yVUdixQdppu1VH&sz=w687">
+
+        <li>UHA味覺糖 忍者糖 金之鎧 軟糖（青葡萄口味 / 忍者めし 金の鎧 マスカット味）</li>
+        <img src="https://drive.google.com/thumbnail?id=1raNuk_tjdzs_XauTHy8AC3j5LsiwEstf&sz=w687">
+
+        <li>Calbee 卡樂比 關西味浪漫 味付海苔風味洋芋片</li>
+        <img src="https://drive.google.com/thumbnail?id=1S0laguQxtRlNseNkq2lhnTmDPrEmNyAC&sz=w687">
+
+        <li>BOURBON 北陸（波路夢） 魯邦千層夾心餅乾（ルーベラ / ルマンド 系列夾心餅）</li>
+        <img src="https://drive.google.com/thumbnail?id=184qvPVTi9I8qJZjVs6I7isvyLkGFukBD&sz=w687">
+
+        <li>海老天婦羅 奢華揚煎（天然蝦煎餅）</li>
+        <img src="https://drive.google.com/thumbnail?id=1jkMc5y3WoCd77jm5wyqRWvnpWBCwiQ3q&sz=w687">
+      </ul>
+
+      <div class="sec-header">2. 調味料 / 醬汁香料區（Seasonings & Sauce Area）</div>
+      <ul>
+        <li>堀西戶外萬能調味香料 沖繩限定香檸風味（アウトドアスパイス ほりにし シークヮーサー）</li>
+        <img src="https://drive.google.com/thumbnail?id=1TXvqvjuy-kr9aJfpLRoByze3OIE8roJG&sz=w687">
+
+        <li>JANE'S KRAZY MIXED-UP SALT 簡先生瘋狂香草鹽 / 綜合鹽（ジェーン クレイジーソルト）</li>
+        <img src="https://drive.google.com/thumbnail?id=1zzWcRj9GMBNWM2gY6Mk61MZIQV84Mz4N&sz=w687">
+
+        <li>House 好侍 佛蒙特咖哩粉 甘口（バーモントカレーパウダー 甘口）</li>
+        <img src="https://drive.google.com/thumbnail?id=1zzWcRj9GMBNWM2gY6Mk61MZIQV84Mz4N&sz=w687">
+
+        <li>Kewpie 丘比 3分鐘廚房 義大利麵手作調味油醬 醬油辣椒風味（パスタを手作りオイルソース しょうゆ＆ペパー）</li>
+        <img src="https://drive.google.com/thumbnail?id=1Ad2IwbBTAkB3MQu9hPBiN2t_s1KxryfY&sz=w687">
+
+        <li>俱知安 蟹肉高湯醬油（俱知安 かにかつゆ 日高産根昆布使用）</li>
+        <img src="https://drive.google.com/thumbnail?id=1ySjHRw7B2s9DPo_-nBo_YJgPvP1IKKom&sz=w687">
+
+        <li>博多華味鳥 10種極致萬能香料鹽（10種の極スパイス）</li>
+        <img src="https://drive.google.com/thumbnail?id=1nb7PQMRnB94zBoauEvcT4Zed-44y2RDY&sz=w687">
+
+        <li>博多華味鳥 贅之極致 萬能香料鹽（贅の極み Japanese spice）</li>
+        <img src="https://drive.google.com/thumbnail?id=16Dz73wQ62mijIYYsyv9v8ZMhs_f7UyZn&sz=w687">
+
+        <li>堀西戶外萬能調味香料（アウトドアスパイス ほりにし）</li>
+        <img src="https://drive.google.com/thumbnail?id=1sME7EP9eenodB60CHA-RNUwMvhEtfduu&sz=w687">
+
+        <li>Fundokin 大分銅金 青柚子胡椒醬</li>
+        <img src="https://drive.google.com/thumbnail?id=1n4t1U8htKCXQ3jRnsOZSlQKGlaTww6mp&sz=w687">
+      </ul>
+
+      <div class="sec-header">3. 沖泡湯品 / 濃縮湯料區（Instant Soups & Broth Area）</div>
+      <ul>
+        <li>丸美屋 稀釋即飲/濃縮湯汁 乾貝濃湯（割るだけスープ ホタテチャウダー）</li>
+        <img src="https://drive.google.com/thumbnail?id=1oprVza6eTgo1lfUqQoAdv41GZEqrjGt0&sz=w687">
+
+        <li>HEINZ 亨氏 多蜜醬罐頭（Heinz Demi Glace Sauce）</li>
+        <img src="https://drive.google.com/thumbnail?id=1LFKD63trVNQgZ0MZIEVilSim4nGRyv9j&sz=w687">
+
+        <li>HEINZ 亨氏 特選多蜜醬罐頭（Heinz Premium Demi Glace Sauce）</li>
+        <img src="https://drive.google.com/thumbnail?id=1LFKD63trVNQgZ0MZIEVilSim4nGRyv9j&sz=w687">
+      </ul>
+
+      <div class="sec-header">4. 罐頭食品區（Canned Foods Area）</div>
+      <ul>
+        <li>大家的主食計畫 沙丁魚罐頭 木桶仕釀鹽水煮（みんなの食プロジェクト IWASHI いわし 木桶仕込み塩 水煮）</li>
+        <img src="https://drive.google.com/thumbnail?id=1v6Zib6nzVFkrTH61XtmeNGdh7fGhTa9_&sz=w687">
+      </ul>
+
+      <div class="sec-header">5. 乾貨 / 豆製品加工區（Dried Foods & Tofu Products Section）</div>
+      <ul>
+        <li>相模屋 吸飽高湯刻絲油豆腐皮/炸豆腐絲（おだしがしみた きざみあげ 鰹だしの甘辛仕立て）</li>
+        <img src="https://drive.google.com/thumbnail?id=1KDEzXaA6oDaLCGd-90yV9pa0k3wLl1Od&sz=w687">
+      </ul>
+
+      <div class="sec-header">6. 生鮮附屬 / 冷藏調理即食區（Fresh Grocery / Chilled Foods Area）</div>
+      <ul>
+        <li>日本產白蘿蔔泥生包（大根おろし 本生おろし）</li>
+        <img src="https://drive.google.com/thumbnail?id=1wMKtR-ijR-nqy8rLrsGwyjXs9SJj5aiS&sz=w687">
+
+        <li>枯節鰹魚醬汁香 山藥泥生包（とろろ 本生おろし）</li>
+        <img src="https://drive.google.com/thumbnail?id=1wMKtR-ijR-nqy8rLrsGwyjXs9SJj5aiS&sz=w687">
+      </ul>
+
+      <div class="sec-header">7. 飲料 / 果汁區（Beverages & Juices Area）</div>
+      <ul>
+        <li>吉田果樹園 愛紅小町 100%溫州蜜柑汁（吉田果樹園 愛紅小町 あいちゃん 100%ストレートみかんジュース）</li>
+        <img src="https://drive.google.com/thumbnail?id=1aTQvIbNZkcxMIpgE_0OlOAT5vwCLijlO&sz=w687">
+      </ul>
+
+      <div class="sec-header">8. 冷凍食品區（Frozen Foods Area）</div>
+      <ul>
+        <li>福岡 YAMAYA やまや 明太子法國麵包（冷凍 明太フランス）</li>
+        <img src="https://drive.google.com/thumbnail?id=1RqtYJTJKEcjYIbZhr_ad7GsspwHrDRIS&sz=w687">
+      </ul>
+
+      <div class="sec-header">9. 無印良品</div>
+      <ul>
+        <li>MUJI 無印良品 沖泡湯品 含有秋葵的黏滑蔬菜湯 10食入（食べるスープ オクラ入りねばねば野菜のスープ）</li>
+        <img src="https://drive.google.com/thumbnail?id=1NXC-KdRrz_Zh6HX58UUNy08WwlFrjMzJ&sz=w687">
+      </ul>
+
+      <div class="sec-header">10. 唐吉軻德</div>
+      <ul>
+        <li>情熱價格（驚安殿堂 DONKI） 禁斷之味 泡麵魔法湯粉 / 旨味魔法粉</li>
+        <img src="https://drive.google.com/thumbnail?id=1Rcpz6bx6AZ6n8M2O1DhcqZqg-0KUBzQa&sz=w687">
+      </ul>
+
     </div>
   </div>
 
